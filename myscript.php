@@ -1,4 +1,7 @@
 <?php
-$name = $argv[1];
-$password = $argv[2];
-var_dump($name ,$password);
+$name = $_POST["name"];
+$password = $_POST["password"];
+echo $name;
+echo strlen($name);
+
+echo $password;
