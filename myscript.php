@@ -1,9 +1,20 @@
 <?php
-$name = $_POST["name"];
-$password = $_POST["password"];
-echo $name;
-echo strlen($name);
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $paragrafo = $_POST['paragrafo'];
+    $parolaDaCensurare = $_POST['parolaDaCensurare'];
 
-echo $password;
-echo strlen($password);
-echo str_ireplace($password,"***",$password);
+    $paragrafoCensurato = str_replace($parolaDaCensurare, '***', $paragrafo);
+
+    echo "<p>Paragrafo: $paragrafoCensurato</p>";
+    echo "<p>Lunghezza del paragrafo: " . strlen($paragrafoCensurato) . "</p>";
+    
+    include('index.php');
+
+    $paragrafoCensurato = str_replace($parolaDaCensurare, '***', $paragrafo);
+
+    echo "<p>Paragrafo (con parole censurate): $paragrafoCensurato</p>";
+    echo "<p>Lunghezza del paragrafo (con parole censurate): " . strlen($paragrafoCensurato) . "</p>";
+   
+
+}
+?>
