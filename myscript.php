@@ -4,9 +4,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $parolaDaCensurare = $_POST['parolaDaCensurare'];
 
     $paragrafoCensurato = str_replace($parolaDaCensurare, '***', $paragrafo);
-
-    echo "<p>Paragrafo: $paragrafoCensurato</p>";
-    echo "<p>Lunghezza del paragrafo: " . strlen($paragrafoCensurato) . "</p>";
+    
+    echo "<p>Paragrafo: $paragrafo</p>";
+    echo "<p>Lunghezza del paragrafo: " . strlen($paragrafo) . "</p>";
     
     include('index.php');
 
@@ -17,4 +17,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
    
 
 }
-?>
